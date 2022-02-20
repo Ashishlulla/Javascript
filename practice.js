@@ -147,3 +147,68 @@ for(let val in obj){
 console.log(`${maxKey} (${max} times)`)
 
 
+// 9. Write a JavaScript program which accept a string as input and swap the case of each character. For example if you input 'The Quick Brown Fox' the output should be 'tHE qUICK bROWN fOX'. Go to the editor
+
+a = 'The Quick Brown Fox';
+let new_str1 = "";
+for(let i of a.split(" ")){
+    for(let j of i){
+        if (j == j.toLowerCase()){
+            new_str1 += j.toUpperCase()
+        }else{
+            new_str1 +=  j.toLowerCase()
+        }
+    }
+    new_str1 += " "
+}
+
+console.log(new_str1)
+
+// 10. Write a JavaScript program which prints the elements of the following array. Go to the editor
+// Note : Use nested for loops.
+// Sample array : var a = [[1, 2, 1, 24], [8, 11, 9, 4], [7, 0, 7, 27], [7, 4, 28, 14], [3, 10, 26, 7]];
+// Sample Output :
+// "row 0"
+// " 1"
+// " 2"
+// " 1"
+// " 24"
+// "row 1"
+// ------
+// ------
+
+var a = [[1, 2, 1, 24], [8, 11, 9, 4], [7, 0, 7, 27], [7, 4, 28, 14], [3, 10, 26, 7]];
+let row = 0;
+for(let i of a){
+    console.log(`row${row}`)
+    for(let j of i){
+        console.log(j);
+    }
+    row +=1;
+}
+
+// 11.Write a JavaScript program to find the sum of squares of a numeric vector.
+
+const sum_square =arr=>{
+    let sum = 0;
+    for(let i of arr){
+        sum += i**2;
+    }
+    return sum;
+}
+console.log(sum_square([1,2,3,4,5]))
+
+//12. Write a JavaScript program to compute the sum and product of an array of integers.
+
+const SumProduct = (arr)=>{
+    let sum = 0;
+    let prod = 1;
+    for(let i of arr){
+        sum +=i;
+        prod *=i;
+    }
+    return `Sum of Array Element : ${sum}\n Product of Array Element: ${prod} `
+}
+
+const ans = SumProduct([1,2,3,4,5])
+console.log(ans)
