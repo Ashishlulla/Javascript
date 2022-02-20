@@ -102,3 +102,48 @@ for(let i = 1; i < num.length; i++){
     }
 }
 console.log(result.join(""))
+
+
+// 7. Write a JavaScript program to sort the items of an array. Go to the 
+//editor
+// Sample array : var arr1 = [ 3, 8, 7, 6, 5, -4, -const ans = 3, 2, 1 ];
+// Sample Output : -4,-3,1,2,3,5,6,7,8
+
+
+var arr1 = [ 3, 8, 7, 6, 5, -4, -3, 2, 1 ];
+const ans = arr1.sort((a,b)=>a-b)
+console.log(ans)
+
+
+// 8. Write a JavaScript program to find the most frequent item of an array. Go to the editor
+// Sample array : var arr1=[3, 'a', 'a', 'a', 2, 3, 'a', 3, 'a', 2, 4, 9, 3];
+// Sample Output : a ( 5 times )
+
+var arr1=[3, 'a', 'a', 'a', 2, 3, 'a', 3, 'a', 2, 4, 9, 3];
+let count = 0;
+let max = 0;
+let maxKey = "";
+
+const setArr = new Set(arr1);
+const obj = {}
+
+for(let i of setArr){
+    for(let j of arr1){
+        if(i == j){
+            count++;
+        }
+    }
+    obj[i] = count;
+    count = 0;
+}
+
+for(let val in obj){
+    if(obj[val]> max){
+      max = obj[val];
+      maxKey= val;
+    }
+  }
+
+console.log(`${maxKey} (${max} times)`)
+
+
